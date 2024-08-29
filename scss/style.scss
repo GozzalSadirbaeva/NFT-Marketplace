@@ -1,0 +1,303 @@
+@import "./reset";
+
+.container {
+    max-width: 1050px;
+    margin: 0 auto;
+    width: 100%;
+}
+body {
+    font-family: "Work Sans", sans-serif;
+    color: var(--white);
+    background-color: var(--black);
+}
+:root{
+    --purple: #A259FF;
+    --white: #FFFFFF;
+    --gray: #858584;
+    --black: #2B2B2B;
+    --gray2: #CCCCCC;
+    --gray3: #3B3B3B;
+}
+%center-element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+%center-element-space {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+%center-element-df {
+    display: flex;
+    align-items: center;
+}
+
+@mixin text__style($fs, $fw, $lh){
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;
+}
+// header
+.navbar{
+    @extend %center-element-space;
+    padding: 34px 0px;
+    max-width: 1180px;
+    margin: 0 auto;
+    width: 100%;
+}
+.nav-list{
+    @extend %center-element-space;
+    gap: 30px;
+}
+.ul-list{
+    @extend %center-element-space;
+    gap: 50px;
+}
+.nav-text{
+    @include text__style(16px, 600, 22.4px );
+    color: var(--white);
+}
+.btn{
+    @extend %center-element-df;
+    gap: 12px;
+    padding: 20px 30px;
+    @include text__style(16px, 600, 22.4px );
+    color: var(--white);
+    background-color: var(--purple);
+    border-radius: 20px;
+    border: none;
+}
+.btn2{
+    @extend %center-element-df;
+    gap: 12px;
+    padding: 19px 50px;
+    @include text__style(16px, 600, 22.4px );
+    color: var(--white);
+    background-color: var(--black);
+    border-radius: 20px;
+    border: 1px solid var(--purple);
+}
+// discover
+.discover{
+    display: flex;
+    justify-content: space-between;
+    padding: 80px 0px;
+    gap: 30px;
+}
+h1{
+    @include text__style(67px, 600, 73.7px );
+    padding-bottom: 10px;
+}
+h3{
+    font-family: "Space Mono", monospace;
+    @include text__style(22px, 400, 35px );
+}
+h2{
+    @include text__style(38px, 600, 45.6px );
+}
+.discover-text{
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+.discover-card{
+    background-color: var(--gray3);
+    border-radius: 20px;
+}
+.card-name{
+    @include text__style(22px, 600, 30px );
+}
+.card-title{
+    padding: 22px 20px;
+}
+.card-ava{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 10px;
+}
+// creators
+.creators{
+    @extend %center-element-space;
+    margin-bottom: 60px;
+    margin-top: 80px;
+}
+.creators-card-wrapper{
+    display: grid;
+    gap: 30px;
+    margin-bottom: 80px;
+    grid-template-columns: repeat(4, 240px);
+    grid-template-rows: repeat(3, 240px);
+}
+.creators-card{
+    background-color: var(--gray3);
+    padding: 20px;
+    border-radius: 20px;
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+.creators-card-name{
+    @include text__style(22px, 600, 30px );
+    padding-top: 20px;
+    padding-bottom: 5px;
+}
+.creators-card-total{
+    @include text__style(16px, 400, 22px );
+    color: var(--gray);
+    span{
+        font-family: "Space Mono", monospace;
+        @include text__style(16px, 400, 22px );
+        color: var(--white);
+    }
+}
+.ranking-num{
+    position: absolute;
+    top: 18px;
+    left: 20px;
+}
+// browse
+.browse{
+    padding: 80px 0px;
+}
+.browse-card-wrapper{
+    padding-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(4, 240px);
+    grid-template-rows: repeat(2, 320px);
+    gap: 30px;
+}
+.browse-card{
+    background-color: var(--gray3);
+    max-width: 240px;
+    border-radius: 20px;
+    position: relative;
+    img{
+        filter: blur(2px);
+    }
+}
+.browse-card-name{
+    @include text__style(22px, 600, 30.8px );
+    padding: 20px 30px 25px 30px;
+}
+// explore
+.explore-card-wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 330px);
+    gap: 30px;
+    padding-bottom: 120px;
+}
+.explore-card{
+    background-color: var(--gray3);
+    border-radius: 20px;
+}
+.explore-card-img{
+    max-width: 330px;
+    height: 296px;
+}
+.explore-card-text{
+    padding: 20px 30px;
+}
+.explore-title{
+    @include text__style(22px, 600, 30.8px );
+}
+.explore-name{
+    font-family: "Space Mono", monospace;
+    @include text__style(16px, 400, 22px );
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 5px;
+}
+.explore-price-title{
+    font-family: "Space Mono", monospace;
+    @include text__style(16px, 400, 22px );
+    color: var(--gray);
+    display: flex;
+    justify-content: space-between;
+    padding-top: 25px;
+}
+.explore-price{
+    font-family: "Space Mono", monospace;
+    @include text__style(16px, 400, 22px );
+    display: flex;
+    justify-content: space-between;
+    padding-top: 8px;
+}
+// digest
+.digest{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--gray3);
+    padding: 60px;
+    gap: 80px;
+    border-radius: 20px;
+    margin-bottom: 80px;
+}
+.digest-text{
+    max-width: 423px;
+    h3{
+        padding-top: 10px;
+        padding-bottom: 40px;
+    }
+}
+.subscribe{
+    padding: 19px 50px;
+    position: absolute;
+    left: 200px;
+   
+    span{
+        display: flex;
+        align-items: center;
+    }
+}
+.digest-input{
+    padding: 19px 30px 19px 20px;
+    font-family: "Space Mono", monospace;
+    @include text__style(16px, 400, 22px );
+    border-radius: 20px;
+    border: none;
+    position: absolute;
+}
+.digest-form{
+    position: relative;
+}
+// footer
+footer{
+    background-color: var(--gray3);
+}
+.footer-wrapper{
+    padding: 40px 60px;
+    display: flex;
+    justify-content: space-between;
+    gap: 124px;
+}
+.footer-title{
+    font-family: "Space Mono", monospace;
+    @include text__style(16px, 400, 22px );
+    color: var(--gray2);
+}
+.footer-logo{
+    padding-bottom: 30px;
+}
+.footer-text{
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+.footer-title1{
+    font-family: "Space Mono", monospace;
+    @include text__style(22px, 700, 35px );
+    padding-bottom: 25px;
+}
+.footer-ul{
+    padding-bottom: 20px;
+}
+.footer-end{
+    border-top:1px solid #858584;
+    padding-bottom: 40px;
+}
+.footer-end-text{
+    @include text__style(12px, 400, 13px );
+    padding-top: 20px;
+    color: var(--gray2);
+}
